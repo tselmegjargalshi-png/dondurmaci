@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Yönetim Paneli, Maraş Dondurmacısı</title>
+<link rel="icon" href="icon.png">
+<link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@1,700&family=Nunito:wght@600;700;800;900&display=swap&subset=latin-ext" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="admin">
+
+<div id="giris" class="giris">
+  <img src="logo.png" alt="">
+  <h1>Yönetim Paneli</h1>
+  <p class="hata" id="girisHata"></p>
+  <input class="alan" id="pin" type="password" placeholder="Şifre" autocomplete="current-password">
+  <button class="btn" id="girisBtn" style="width:100%">Giriş yap</button>
+</div>
+
+<div id="uygulama" hidden>
+  <div class="ustbar"><img src="icon.png" alt=""><b>Yönetim Paneli</b><a href="index.html" target="_blank">Menüyü gör</a><a href="#" id="cikis">Çıkış</a></div>
+  <div class="panel">
+    <div class="istat" id="istat"></div>
+    <div class="adm-sekmeler" id="admSek">
+      <button class="aktif" data-t="urunler">Ürünler</button>
+      <button data-t="kategoriler">Kategoriler</button>
+      <button data-t="isletme">İşletme</button>
+      <button data-t="yedek">Yedek ve Ayarlar</button>
+    </div>
+    <div id="icerik"></div>
+  </div>
+</div>
+
+<div class="modal-arka" id="modalArka"><div class="modal" id="modal"></div></div>
+<div class="toast" id="toast"></div>
+
+<script src="assets/shared.js"></script>
+<script src="assets/admin.js"></script>
+</body>
+</html>

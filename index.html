@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Maraş Dondurmacısı Dijital Menü</title>
+<meta name="description" content="Maraş Dondurmacısı dijital menüsü: dondurmalar, tatlılar, içecekler, kalori ve alerjen bilgileri.">
+<meta name="theme-color" content="#8c1236">
+<link rel="icon" href="icon.png">
+<link rel="apple-touch-icon" href="icon.png">
+<meta property="og:title" content="Maraş Dondurmacısı">
+<meta property="og:description" content="Dövülür, uzar, bir daha sorulur: bir tane daha?">
+<meta property="og:image" content="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@1,700&family=Nunito:wght@600;700;800;900&display=swap&subset=latin-ext" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="tente" aria-hidden="true"></div>
+
+<header class="hero">
+  <img class="logo" id="logo" src="logo.png" alt="Maraş Dondurmacısı logosu">
+  <h1 id="slogan"></h1>
+  <p class="alt" id="altSlogan"></p>
+  <div class="duyuru" id="duyuru" hidden></div>
+  <div class="seritmarkee" aria-hidden="true"><div id="serit"></div></div>
+</header>
+
+<section class="yapici" id="yapici" aria-label="Kendi külahını yap">
+  <h2>Kendi Külahını Yap</h2>
+  <p class="not">En fazla üç top seç, kalori ve alerjenleri anında gör</p>
+  <div class="yapici-govde">
+    <svg id="kulah" viewBox="0 0 150 230" aria-hidden="true">
+      <defs>
+        <pattern id="gofret" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+          <rect width="14" height="14" fill="#e6b15a"/>
+          <path d="M0 7h14M7 0v14" stroke="#c98a2e" stroke-width="2"/>
+        </pattern>
+      </defs>
+      <g id="toplar"></g>
+      <path d="M32 112h86L75 226z" fill="url(#gofret)" stroke="#b97a22" stroke-width="3" stroke-linejoin="round"/>
+      <path d="M28 112h94" stroke="#b97a22" stroke-width="6" stroke-linecap="round"/>
+    </svg>
+    <div>
+      <div class="tatchip" id="tatlar"></div>
+    </div>
+  </div>
+  <label style="display:flex;gap:8px;align-items:center;margin-top:12px;font-weight:800;color:var(--kahve)">
+    <input type="checkbox" id="kulahSec" checked style="width:18px;height:18px;accent-color:#e83e7c"> Waffle külah olsun
+  </label>
+  <div class="yapici-sonuc">
+    <div>
+      <div class="rakam"><span id="ykcal">0</span> kcal <small>·</small> <span id="yfiyat">0 ₺</span></div>
+      <div id="yalerji" class="alt-satir" style="margin-top:6px"></div>
+    </div>
+    <button class="temizle" id="yTemizle" type="button">Sıfırla</button>
+  </div>
+</section>
+
+<nav class="gezinti" aria-label="Menü bölümleri">
+  <div class="gezinti-ic">
+    <div class="sekmeler" id="sekmeler"></div>
+    <button class="ikonbtn" id="aramaBtn" type="button" aria-label="Ara">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+    </button>
+    <button class="ikonbtn" id="filtreBtn" type="button" aria-label="Alerji filtresi">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 5h18l-7 8v6l-4-2v-4z"/></svg>
+      <span class="nokta"></span>
+    </button>
+  </div>
+  <div class="arama" id="arama"><input id="aramaInput" type="search" placeholder="Dondurma, tatlı, içecek ara" autocomplete="off"></div>
+</nav>
+
+<main id="liste"></main>
+
+<div class="cekmece-arka" id="arka"></div>
+<aside class="cekmece" id="cekmece" aria-label="Alerji filtresi">
+  <h2>Alerjin mi var?</h2>
+  <p>Seçtiğin alerjeni içeren ürünleri menüden gizleriz.</p>
+  <div class="alerji-izgara" id="alerjiIzgara"></div>
+  <button class="bitti" id="bitti" type="button">Tamam</button>
+</aside>
+
+<footer>
+  <div class="ic">
+    <h2>Alerjenler</h2>
+    <p class="aciklama">Ürünlerimiz mutfağımızda diğer alerjenlerle temas etmiş olabilir. Şüphede kalırsan bize sor.</p>
+    <div class="lejant" id="lejant"></div>
+    <div class="bilgi" id="bilgi"></div>
+    <div class="imza">
+      <img src="icon.png" alt="">
+      <div id="imzaAd"></div>
+      <a href="admin.html" style="color:#8fa8b3">Yönetici girişi</a>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/shared.js"></script>
+<script src="assets/menu.js"></script>
+</body>
+</html>
